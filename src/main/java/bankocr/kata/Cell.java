@@ -1,11 +1,28 @@
 package bankocr.kata;
 
+
+
 public class Cell {
 
     private static final String ZERO_CELL =
                     " _ " +
                     "| |" +
                     "|_|";
+
+    private static final String TWO_CELL =
+                    " _ "+
+                    " _|"+
+                    "|_ ";
+
+    private static final String SIX_CELL =
+                    " _ "+
+                    "|_ "+
+                    "|_|";
+
+
+
+
+
     private String cellAsText;
 
     public Cell(String cellAsText) {

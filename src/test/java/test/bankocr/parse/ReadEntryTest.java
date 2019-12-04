@@ -29,4 +29,6 @@ public class ReadEntryTest {
         Entry entry = reader.newReadEntry();
         assertThat(entry.toString(), is(equalTo("111111111")));
     }
+
+
 }
