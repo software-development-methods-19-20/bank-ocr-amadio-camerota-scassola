@@ -6,6 +6,18 @@ public class Cell {
                     " _ " +
                     "| |" +
                     "|_|";
+
+    private static final String THREE_CELL =
+                    " _ " +
+                    " _|" +
+                    " _|";
+
+    private static final String SEVEN_CELL =
+                    " _ " +
+                    "  |" +
+                    "  |";
+
+
     private String cellAsText;
 
     public Cell(String cellAsText) {
