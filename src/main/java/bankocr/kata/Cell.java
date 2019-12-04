@@ -1,13 +1,24 @@
 package bankocr.kata;
 
-
-
 public class Cell {
 
     private static final String ZERO_CELL =
                     " _ " +
                     "| |" +
                     "|_|";
+
+    private static final String THREE_CELL =
+                    "  |" +
+                    "  |" +
+                    "  |";
+
+    private static final String FIVE_CELL =
+                    " _ " +
+                    "|_ " +
+                    " _|";
+
+    private final String[] numbers = {ZERO_CELL, THREE_CELL, FIVE_CELL};
+
 
     private static final String TWO_CELL =
                     " _ "+
