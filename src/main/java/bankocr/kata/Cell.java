@@ -1,5 +1,8 @@
 package bankocr.kata;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Cell {
 
     private static final String ZERO_CELL =
@@ -50,17 +53,19 @@ public class Cell {
                     "|_|" +
                     " _|";
 
-    private final String[] numbers = {ZERO_CELL,
-            ONE_CELL,
-            TWO_CELL,
-            THREE_CELL,
-            FOUR_CELL,
-            FIVE_CELL,
-            SIX_CELL,
-            SEVEN_CELL,
-            EIGHT_CELL,
-            NINE_CELL};
-
+    private static  Map<String, String> numbers = new HashMap<>();
+    static {
+        numbers.put(ZERO_CELL, "0");
+        numbers.put(ONE_CELL, "1");
+        numbers.put(TWO_CELL, "2");
+        numbers.put(THREE_CELL, "3");
+        numbers.put(FOUR_CELL, "4");
+        numbers.put(FIVE_CELL, "5");
+        numbers.put(SIX_CELL, "6");
+        numbers.put(SEVEN_CELL, "7");
+        numbers.put(EIGHT_CELL, "8");
+        numbers.put(NINE_CELL, "9");
+    };
 
     private String cellAsText;
 
@@ -71,6 +76,7 @@ public class Cell {
 
     @Override
     public String toString() {
-        return ZERO_CELL.equals(cellAsText) ? "0": "1";
+        return numbers.get(cellAsText);
     }
+
 }
