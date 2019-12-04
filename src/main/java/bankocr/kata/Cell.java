@@ -7,7 +7,7 @@ public class Cell {
                     "| |" +
                     "|_|";
 
-    private static final String THREE_CELL =
+    private static final String ONE_CELL =
                     "  |" +
                     "  |" +
                     "  |";
