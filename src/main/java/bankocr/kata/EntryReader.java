@@ -18,4 +18,8 @@ public class EntryReader {
     public Entry newReadEntry() throws IOException {
         return new Entry(bufferedReader.readLine(), bufferedReader.readLine(), bufferedReader.readLine());
     }
+
+    public ClientPool fileParser() {
+        
+    }
 }

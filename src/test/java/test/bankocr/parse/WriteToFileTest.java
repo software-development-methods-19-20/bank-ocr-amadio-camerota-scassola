@@ -19,7 +19,8 @@ public class WriteToFileTest {
         URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allZerosEntry");
         EntryReader reader = new EntryReader(Path.of(allZerosSingleEntry.toURI()));
         ClientPool entryList = reader.fileParser();
-        //write entryList to file
+        entryList.toStream()
+                .forEach(x -> x.appendToFile(writer))//write entryList to file
         assertThat(entry.toString(), is(equalTo("000000000")));
 
     }
