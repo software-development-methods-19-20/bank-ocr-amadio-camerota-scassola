@@ -1,4 +1,6 @@
 package bankocr.kata;
 
-public class ClientPool {
+import java.util.ArrayList;
+
+public class ClientPool extends ArrayList<Entry> {
 }
