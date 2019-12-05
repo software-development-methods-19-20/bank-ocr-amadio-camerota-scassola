@@ -1,5 +1,6 @@
 package test.bankocr.parse;
 
+import bankocr.kata.ClientPool;
 import bankocr.kata.Entry;
 import bankocr.kata.EntryReader;
 import org.junit.jupiter.api.Test;
