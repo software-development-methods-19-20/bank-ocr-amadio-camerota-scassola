@@ -19,6 +19,6 @@ public class PrintAccountNumberTest {
     @Test
     void allOnesEntry() {
         Entry entry = new Entry("                           ", "  |  |  |  |  |  |  |  |  |", "  |  |  |  |  |  |  |  |  |");
-        assertThat(new AccountNumber(entry).toString(), is(equalTo("111111111")));
+        assertThat(new AccountNumber(entry).toString(), is(equalTo("111111111 ERR")));
     }
 }
