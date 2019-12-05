@@ -44,7 +44,4 @@ public class EntryReader {
 
     }
 
-    public ClientPool fileParser() {
-        
-    }
 }
