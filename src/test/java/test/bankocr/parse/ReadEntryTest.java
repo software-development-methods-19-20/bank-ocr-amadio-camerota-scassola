@@ -49,5 +49,15 @@ public class ReadEntryTest {
         assertThat(clients.get(1).toString(), is(equalTo("999999999")));
     }
 
+    @Test
+    void illEntryTest() throws Exception {
+
+        URL allNumbersTest = BankOcrAcceptanceTest.class.getClassLoader().getResource("multipleEntries");
+        EntryReader reader = new EntryReader(Path.of(allNumbersTest.toURI()));
+        ClientPool clients = reader.readAllEntries();
+        assertThat(clients.get(2).toString(), is(equalTo("49086771?ILL")));
+
+    }
+
 
 }

@@ -76,7 +76,11 @@ public class Cell {
 
     @Override
     public String toString() {
-        return numbers.get(cellAsText);
+        String output = numbers.get(cellAsText);
+        if( output == null) {
+            return "?";
+        }
+        return output;
     }
 
 }
