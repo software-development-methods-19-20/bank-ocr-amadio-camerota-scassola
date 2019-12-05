@@ -2,6 +2,7 @@ package bankocr.kata;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Entry {
 
@@ -21,6 +22,15 @@ public class Entry {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         cells.forEach(cell -> stringBuilder.append(cell.toString()));
+
+        Integer malformedCharacters = stringBuilder.toString().chars()
+                .mapToObj(c -> (char) c)
+                .mapToInt(x -> (x== '?') ? 1 : 0)
+                .sum();
+
+
+        if (malformedCharacters > 0) {stringBuilder.append("ILL");};
+
         return stringBuilder.toString();
     }
 }
