@@ -1,12 +1,12 @@
 package test.bankocr.parse;
 
 import bankocr.kata.ClientPool;
+import bankocr.kata.Entry;
 import bankocr.kata.EntryReader;
 import org.junit.jupiter.api.Test;
 import test.bankocr.BankOcrAcceptanceTest;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -26,7 +26,17 @@ public class FileWriteTest {
         ClientPool clients = reader.readAllEntries();
         clients.toFile("outputFile", false);
 
-        // read file
-        // assert line
+        // verification of output file correctness
+        File outputFile = new File ("outputFile");
+        try {
+            FileReader fileReader = new FileReader(outputFile);
+            BufferedReader outputFileContent = new BufferedReader(fileReader);
+            for (Entry e : clients) {
+                assertThat(e.toString(), is(outputFileContent.readLine()));
+            }
+        } catch (NullPointerException e) {
+            System.out.println("File non trovato");
+        }
+
     }
 }
