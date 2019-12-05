@@ -16,6 +16,32 @@ public class EntryReader {
     }
 
     public Entry newReadEntry() throws IOException {
-        return new Entry(bufferedReader.readLine(), bufferedReader.readLine(), bufferedReader.readLine());
+
+        String line1, line2, line3;
+        line1 = bufferedReader.readLine();
+        line2 = bufferedReader.readLine();
+        line3 = bufferedReader.readLine();
+
+        if (line1 != null && line2 != null && line3 != null){
+
+            Entry newEntry = new Entry(line1, line2,line3);
+            bufferedReader.readLine();
+            return newEntry;
+        }
+
+        return null;
     }
+
+    public ClientPool readAllEntries() throws IOException{
+
+        ClientPool clients = new ClientPool();
+        Entry newEntry;
+        while ((newEntry = newReadEntry()) != null)
+            clients.add(newEntry);
+
+        return clients;
+
+
+    }
+
 }
