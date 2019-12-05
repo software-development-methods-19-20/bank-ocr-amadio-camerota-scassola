@@ -29,7 +29,7 @@ public class Entry {
                 .sum();
 
 
-        if (malformedCharacters > 0) {stringBuilder.append("ILL");};
+        if (malformedCharacters > 0) {stringBuilder.append(" ILL");};
 
         return stringBuilder.toString();
     }
