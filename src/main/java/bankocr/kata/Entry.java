@@ -33,4 +33,12 @@ public class Entry {
 
         return stringBuilder.toString();
     }
+
+    public Integer distance() {
+        int distanceSum = 0;
+        for (Cell c : this.cells) {
+            distanceSum += c.distance();
+        }
+        return distanceSum;
+    }
 }

@@ -56,16 +56,18 @@ public class Cell {
     private static  Map<String, String> numbers = new HashMap<>();
     static {
         numbers.put(ZERO_CELL, "0");
-        numbers.put(ONE_CELL, "1");
-        numbers.put(TWO_CELL, "2");
-        numbers.put(THREE_CELL, "3");
+        numbers.put(ONE_CELL,  "1");
+        numbers.put(TWO_CELL,  "2");
+        numbers.put(THREE_CELL,"3");
         numbers.put(FOUR_CELL, "4");
         numbers.put(FIVE_CELL, "5");
-        numbers.put(SIX_CELL, "6");
-        numbers.put(SEVEN_CELL, "7");
-        numbers.put(EIGHT_CELL, "8");
+        numbers.put(SIX_CELL,  "6");
+        numbers.put(SEVEN_CELL,"7");
+        numbers.put(EIGHT_CELL,"8");
         numbers.put(NINE_CELL, "9");
     };
+
+
 
     private String cellAsText;
 
@@ -83,4 +85,7 @@ public class Cell {
         return output;
     }
 
+    public int distance() {
+        return 1;
+    }
 }
