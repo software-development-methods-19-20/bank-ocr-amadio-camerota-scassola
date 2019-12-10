@@ -1,7 +1,11 @@
 package bankocr.kata;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import static java.util.Collections.min;
 
 public class Cell {
 
@@ -85,11 +89,20 @@ public class Cell {
         return output;
     }
 
-    public int distance(String other) {
+    private int singleDistance(String other) {
         int sum = 0;
         for(int i=0; i<cellAsText.length(); i++)
             if(cellAsText.charAt(i)!=other.charAt(i))
                 sum++;
         return sum;
+    }
+
+    public int distance() {
+
+        List<Integer> distanceArray = new ArrayList<>();
+        for (Map.Entry<String, String> e : numbers.entrySet()) {
+            distanceArray.add(this.singleDistance(e.getKey()));
+        }
+        return min(distanceArray);
     }
 }

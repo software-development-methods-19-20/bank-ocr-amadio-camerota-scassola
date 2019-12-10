@@ -26,4 +26,14 @@ public class ParseCellTest {
                         "  |";
         assertThat(new Cell(zeroAsText).toString(), is(equalTo("1")));
     }
+
+    @Test
+    public void distanceZero() {
+        String zeroAsText =
+                "   " +
+                "  |" +
+                "  |";
+
+        assertThat(new Cell(zeroAsText).distance(), is (equalTo(0)));
+    }
 }
