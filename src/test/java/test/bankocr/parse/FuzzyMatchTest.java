@@ -19,7 +19,7 @@ public class FuzzyMatchTest {
         URL inputFileContent= BankOcrAcceptanceTest.class.getClassLoader().getResource("multipleEntries");//ButOneIsDucked");
         EntryReader reader = new EntryReader(Path.of(inputFileContent.toURI()));
         ClientPool clients = reader.readAllEntries();
-        assertThat(clients.get(0).distance(), is(equalTo(1)));
+        assertThat(clients.get(0).distance(), is(equalTo(9)));
 
     }
 }
