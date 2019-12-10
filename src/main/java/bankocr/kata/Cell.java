@@ -105,4 +105,5 @@ public class Cell {
         }
         return min(distanceArray);
     }
+
 }
