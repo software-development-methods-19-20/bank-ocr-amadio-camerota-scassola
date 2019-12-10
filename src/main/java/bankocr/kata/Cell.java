@@ -85,7 +85,11 @@ public class Cell {
         return output;
     }
 
-    public int distance() {
-        return 1;
+    public int distance(String other) {
+        int sum = 0;
+        for(int i=0; i<cellAsText.length(); i++)
+            if(cellAsText.charAt(i)!=other.charAt(i))
+                sum++;
+        return sum;
     }
 }
