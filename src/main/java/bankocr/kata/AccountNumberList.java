@@ -3,7 +3,7 @@ package bankocr.kata;
 import java.io.*;
 import java.util.ArrayList;
 
-public class ClientPool extends ArrayList<Entry> {
+public class AccountNumberList extends ArrayList<Entry> {
     public void toFile(String outputFile, Boolean append) throws IOException {
         File file = new File(outputFile);
         FileWriter writer = new FileWriter(file, append);

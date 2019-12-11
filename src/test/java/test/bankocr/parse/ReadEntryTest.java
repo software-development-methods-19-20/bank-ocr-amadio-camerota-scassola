@@ -1,6 +1,6 @@
 package test.bankocr.parse;
 
-import bankocr.kata.ClientPool;
+import bankocr.kata.AccountNumberList;
 import bankocr.kata.Entry;
 import bankocr.kata.EntryReader;
 import org.junit.jupiter.api.Test;
@@ -44,7 +44,7 @@ public class ReadEntryTest {
 
         URL allNumbersTest = BankOcrAcceptanceTest.class.getClassLoader().getResource("multipleEntries");
         EntryReader reader = new EntryReader(Path.of(allNumbersTest.toURI()));
-        ClientPool clients = reader.readAllEntries();
+        AccountNumberList clients = reader.readAllEntries();
         assertThat(clients.get(0).toString(), is(equalTo("200800000")));
         assertThat(clients.get(1).toString(), is(equalTo("999999999")));
     }
@@ -54,7 +54,7 @@ public class ReadEntryTest {
 
         URL allNumbersTest = BankOcrAcceptanceTest.class.getClassLoader().getResource("multipleEntries");
         EntryReader reader = new EntryReader(Path.of(allNumbersTest.toURI()));
-        ClientPool clients = reader.readAllEntries();
+        AccountNumberList clients = reader.readAllEntries();
         assertThat(clients.get(2).toString(), is(equalTo("49086771? ILL")));
 
     }

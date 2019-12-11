@@ -32,9 +32,9 @@ public class EntryReader {
         return null;
     }
 
-    public ClientPool readAllEntries() throws IOException{
+    public AccountNumberList readAllEntries() throws IOException{
 
-        ClientPool clients = new ClientPool();
+        AccountNumberList clients = new AccountNumberList();
         Entry newEntry;
         while ((newEntry = newReadEntry()) != null)
             clients.add(newEntry);

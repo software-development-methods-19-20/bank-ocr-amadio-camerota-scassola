@@ -1,6 +1,6 @@
 package test.bankocr.parse;
 
-import bankocr.kata.ClientPool;
+import bankocr.kata.AccountNumberList;
 import bankocr.kata.Entry;
 import bankocr.kata.EntryReader;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,6 @@ import java.net.URL;
 import java.nio.file.Path;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class FileWriteTest {
@@ -23,7 +22,7 @@ public class FileWriteTest {
 
         EntryReader reader = new EntryReader(Path.of(allNumbersTest.toURI()));
 
-        ClientPool clients = reader.readAllEntries();
+        AccountNumberList clients = reader.readAllEntries();
         clients.toFile("outputFile", false);
 
         // verification of output file correctness

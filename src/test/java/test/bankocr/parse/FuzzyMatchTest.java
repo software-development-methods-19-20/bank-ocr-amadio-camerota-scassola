@@ -1,6 +1,6 @@
 package test.bankocr.parse;
 
-import bankocr.kata.ClientPool;
+import bankocr.kata.AccountNumberList;
 import bankocr.kata.EntryReader;
 import org.junit.jupiter.api.Test;
 import test.bankocr.BankOcrAcceptanceTest;
@@ -18,7 +18,7 @@ public class FuzzyMatchTest {
 
         URL inputFileContent= BankOcrAcceptanceTest.class.getClassLoader().getResource("multipleEntries");//ButOneIsDucked");
         EntryReader reader = new EntryReader(Path.of(inputFileContent.toURI()));
-        ClientPool clients = reader.readAllEntries();
+        AccountNumberList clients = reader.readAllEntries();
         assertThat(clients.get(0).distance(), is(equalTo(0)));
 
     }
@@ -28,7 +28,7 @@ public class FuzzyMatchTest {
 
         URL inputFileContent= BankOcrAcceptanceTest.class.getClassLoader().getResource("multipleEntriesButOneIsDucked");//ButOneIsDucked");
         EntryReader reader = new EntryReader(Path.of(inputFileContent.toURI()));
-        ClientPool clients = reader.readAllEntries();
+        AccountNumberList clients = reader.readAllEntries();
         assertThat(clients.get(0).distance(), is(equalTo(1)));
         assertThat(clients.get(1).distance(), is(equalTo(1)));
     }
